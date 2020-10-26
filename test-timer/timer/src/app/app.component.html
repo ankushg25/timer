@@ -1,0 +1,19 @@
+<div class="timer">
+
+  <div class="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Timer</mat-label>
+      <input type="number" name="number" matInput min="0" [formControl]="countDownInput" step="1">
+    </mat-form-field>
+  </div>
+  <div class="progress-bar">
+    {{displayTimer | date : "H:mm:ss" : "+0000" }} <mat-progress-bar mode="determinate"
+      [value]="(countDown/(countDownInput.value*60))*100"></mat-progress-bar>
+  </div>
+  <div class="buttons">
+    <button mat-flat-button color="primary" (click)="start()">{{ timer ? "Stop":"Start" }}</button>
+    <button mat-flat-button color="accent" (click)="pause()">{{ paused ? "Resume" : "Pause" }}</button>
+    <button mat-flat-button color="warn" (click)="reset()">Reset</button>
+  </div>
+
+</div>

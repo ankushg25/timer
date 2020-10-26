@@ -1,0 +1,35 @@
+.timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+
+    button {
+        margin: 8px;
+        width: 40%;
+    }
+
+    .buttons {
+        display: flex;
+    }
+
+    div.progress-bar {
+        display: inline-block;
+        margin-bottom: 8px;
+        width: 50%;
+        max-width: 210px;
+    }
+
+    @media only screen and (max-width: 500px) {
+        .buttons {
+            display: block;
+            width: 50%;
+            max-width: 210px;
+        }
+        button {
+            width: 100%;
+            margin: 8px 0;
+        }
+    }
+}
